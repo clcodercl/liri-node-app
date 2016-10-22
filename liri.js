@@ -30,10 +30,35 @@ client.get('statuses/user_timeline',{
 	screen_name:'bootsbootsie'
 	count: 20
 }, function (error, tweets, response){
-	
+	for (i=0, i<tweets.length; i++)
+		console.log(tweets[i].created_at);
+		console.log(tweets[i].text);
+	}
+});
+
+break;
+
+case 'spotify-this-song':
+function spotifyThis(){
+	var track=process.argv[3];
+	var defaultTrack = "Ace of Base - The Sign";
+
 }
 
+spotify.search({type:'track', query:track}, function(err,data){
+	if (err){
+		console.log('Error occurred: ' + err);
+		return;
+			}
+console.log("Artist " + data.tracks.items[0].artists[0].name);
+console.log("Track: " + data.tracks.items[0].name);
+console.log("Preview link:" + data.tracks.items[0].preview_url);
+console.log("Album:" + data.tracks.items[0].album.name);
+});
+}
+spotifyThis();
 
+break;
 
 //Make it so liri.js can take in one of the following commands:
 function commands() {
