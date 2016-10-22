@@ -74,12 +74,21 @@ if (movieName == undefined){
 var queryUrl = "http://www.omdbaspi.com/?t=' + movieName + '&y=&plot=short&tomatoes=true&r=json';
 
 request(queryUrl, function(error, response, body){
-	
+
+if (!error && rasponse.statusCode == 200){
+	console.log("Title: " + JSON.parse(body)["Title"])
+	console.log("Release Year: " + JSON.parse(body)["Year"])
+	console.log("Rating: " + JSON.parse(body)["imdbRating"])
+	console.log("Country: " + JSON.parse(body)["Country"])
+	console.log("Language: " + JSON.parse(body)["Plot"])
+
+}	
+
 }
 
 //Make it so liri.js can take in one of the following commands:
 function commands() {
-  this.my-tweets = [],
+  this.my-tweets = [], + JSON.parse(body)["Year"]
   this.spotify-this-song = [],
   this.movie-this
   this.do-what-it-says
