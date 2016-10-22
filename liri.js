@@ -10,18 +10,28 @@ switch (operator){
 	var keys = require(./keys.js);
 }
 
+var client = new Twitter {
+	consumer_key: keys.twitterKeys.consumer_key,
+	consumer_secret: keys.twitterKeys.consumer_secret,
+	access_token_key: keys.twitterKeys.access_token_key,
+	access_token_secret: keys.twitterKeys.access_token_secret
+}
+
+var client = new Twitter({
+            consumer_key: keys.twitterKeys.consumer_key,
+            consumer_secret: keys.twitterKeys.consumer_secret,
+            access_token_key: keys.twitterKeys.access_token_key,
+            access_token_secret: keys.twitterKeys.access_token_secret
+        });
+
 //Then store the keys in a variable.
 
-fs.watch(keys.js, function() {
-	let ls spawn('ls', ['-lh', key.js]);
-	output ='';
-	ls.stdout.on('data', function(chunk){
-		output += chunk.tostring();
-	});
-
-	ls.on('close', function(){
-});
-
+client.get('statuses/user_timeline',{
+	screen_name:'bootsbootsie'
+	count: 20
+}, function (error, tweets, response){
+	
+}
 
 
 
