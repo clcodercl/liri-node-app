@@ -80,9 +80,16 @@ if (!error && rasponse.statusCode == 200){
 	console.log("Release Year: " + JSON.parse(body)["Year"])
 	console.log("Rating: " + JSON.parse(body)["imdbRating"])
 	console.log("Country: " + JSON.parse(body)["Country"])
-	console.log("Language: " + JSON.parse(body)["Plot"])
+	console.log("Language: " + JSON.parse(body)["Language"])
+	console.log("Plot: " + JSON.parse(body)["Plot"] )
+	console.log("Starring: " + JSON.parse(body)["Actors"])
+	console.log("Rotten Tomatoes rating: " + JSON.parse(body)["tomatoRating"])
+	console.log("Rotten Tomatoes info: " + JSON.parse(body)["tomatoURL"])
 
 }	
+});
+break;
+
 
 }
 
