@@ -90,15 +90,22 @@ if (!error && rasponse.statusCode == 200){
 });
 break;
 
+case 'do-what-it-says':
+
+fs.readFile("./random.txt", "utf8", function(error, data){
+	var dataArr = data.split(',');
+	process.argv[3] = dataArr[1];
+	spotifyThis();
+})
 
 }
 
 //Make it so liri.js can take in one of the following commands:
-function commands() {
-  this.my-tweets = [], + JSON.parse(body)["Year"]
-  this.spotify-this-song = [],
-  this.movie-this
-  this.do-what-it-says
+//function commands() {
+//  this.my-tweets = [], + JSON.parse(body)["Year"]
+ // this.spotify-this-song = [],
+ // this.movie-this
+ // this.do-what-it-says
 	//my-tweets
 
 	//spotify-this-song
