@@ -60,6 +60,23 @@ spotifyThis();
 
 break;
 
+case 'movie-this':
+
+varmovieName - process.argv[3];
+var defaultMovie = 'Mr.Nobody';
+}
+
+if (movieName == undefined){
+	movie Name = defaultMovie;
+
+}
+
+var queryUrl = "http://www.omdbaspi.com/?t=' + movieName + '&y=&plot=short&tomatoes=true&r=json';
+
+request(queryUrl, function(error, response, body){
+	
+}
+
 //Make it so liri.js can take in one of the following commands:
 function commands() {
   this.my-tweets = [],
