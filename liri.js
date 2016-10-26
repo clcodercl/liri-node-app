@@ -7,36 +7,29 @@ var fs = require('fs');
 switch (operator){
 	case my-tweets:
 	var Twitter = require ("twitter");
-	var keys = require(./keys.js);
-}
+	var keys = require('./keys.js');
 
-var client = new Twitter {
+
+var client = new Twitter ({
 	consumer_key: keys.twitterKeys.consumer_key,
 	consumer_secret: keys.twitterKeys.consumer_secret,
 	access_token_key: keys.twitterKeys.access_token_key,
 	access_token_secret: keys.twitterKeys.access_token_secret
-}
-
-var client = new Twitter({
-            consumer_key: keys.twitterKeys.consumer_key,
-            consumer_secret: keys.twitterKeys.consumer_secret,
-            access_token_key: keys.twitterKeys.access_token_key,
-            access_token_secret: keys.twitterKeys.access_token_secret
-        });
+});
 
 //Then store the keys in a variable.
 
 client.get('statuses/user_timeline',{
-	screen_name:'bootsbootsie'
+	screen_name:'bootsbootsie',
 	count: 20
 }, function (error, tweets, response){
-	for (i=0, i<tweets.length; i++)
+	for (i=0; i < tweets.length; i++){
 		console.log(tweets[i].created_at);
 		console.log(tweets[i].text);
-	}
+break;	}
+
 });
 
-break;
 
 case 'spotify-this-song':
 function spotifyThis(){
@@ -55,10 +48,11 @@ console.log("Track: " + data.tracks.items[0].name);
 console.log("Preview link:" + data.tracks.items[0].preview_url);
 console.log("Album:" + data.tracks.items[0].album.name);
 });
-}
+break;
+
 spotifyThis();
 
-break;
+
 
 case 'movie-this':
 
@@ -67,11 +61,11 @@ var defaultMovie = 'Mr.Nobody';
 }
 
 if (movieName == undefined){
-	movie Name = defaultMovie;
+	movieName = defaultMovie;
 
 }
 
-var queryUrl = "http://www.omdbaspi.com/?t=' + movieName + '&y=&plot=short&tomatoes=true&r=json';
+var queryUrl = "http://www.omdbaspi.com/?t=' + movieName + '&y=&plot=short&tomatoes=true&r=json";
 
 request(queryUrl, function(error, response, body){
 
@@ -86,9 +80,10 @@ if (!error && rasponse.statusCode == 200){
 	console.log("Rotten Tomatoes rating: " + JSON.parse(body)["tomatoRating"])
 	console.log("Rotten Tomatoes info: " + JSON.parse(body)["tomatoURL"])
 
-}	
+}
 });
-break;
+
+
 
 case 'do-what-it-says':
 
@@ -98,7 +93,7 @@ fs.readFile("./random.txt", "utf8", function(error, data){
 	spotifyThis();
 })
 
-}
+
 
 //Make it so liri.js can take in one of the following commands:
 //function commands() {
